@@ -36,6 +36,36 @@ function userSelection () {
 }
 
 //create function called singleRound with two parameters, one for the computers move and one for the users move
+function singleRound (userPlay, computerPlay) {
+    if (userPlay === 'rock') {
+        if (computerPlay === 'rock') {
+            console.log('It\'s a draw.');
+        } else if (computerPlay === 'paper') {
+            console.log('You loose!');
+        } else {
+            console.log('You win!');
+        }
+    } else if (userPlay === 'paper') {
+        if (computerPlay === 'rock') {
+            console.log('You win!');
+        } else if (computerPlay === 'paper') {
+            console.log('It\'s a draw.');
+        } else {
+            console.log('You loose!');
+        }
+    } else if (userPlay === 'scissors') {
+        if (computerPlay === 'rock') {
+            console.log('You loose!');
+        } else if (computerPlay === 'paper') {
+            console.log('You win!');
+        } else {
+            console.log('It\'s a draw.');
+        }        
+    }
+}
+
+console.log(singleRound(userSelection(), computerPlay()));
+
 
 //create IF case, if userSelection is rock
     //create IF case, if computerPlay is rock
@@ -62,4 +92,3 @@ function userSelection () {
 
 //print the returned value from computerPlay
 //console.log(computerPlay());
-console.log(userSelection())
