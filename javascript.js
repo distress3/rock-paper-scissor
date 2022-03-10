@@ -25,7 +25,7 @@ function userSelection () {
     //create a variable called lowerCaseInput that converts userInput to lower case
     let lowerCaseInput = userInput.toLowerCase();
     //create an If-case that checks if the lowerCaseInput is either rock, paper or scissor
-    if (lowerCaseInput == 'rock' || lowerCaseInput == 'paper' || lowerCaseInput == 'scissor') {
+    if (lowerCaseInput == 'rock' || lowerCaseInput == 'paper' || lowerCaseInput == 'scissors') {
         //return lowerCaseInput
         return lowerCaseInput;
     } else { 
