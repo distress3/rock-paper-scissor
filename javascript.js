@@ -1,5 +1,3 @@
-//hello
-
 //create function computerPlay with no parameters
 function computerPlay () {
     //create array "possibleMoves" with rock, paper, scissors
@@ -67,11 +65,37 @@ function singleRound (userPlay, computerPlay) {
     return result;
 }
 
-console.log('It\'s a draw.');
-console.log('You loose!');
-console.log('You win!');
+//create a function named game()
+function game () {
+    //create a variable called gameResult and set it to 0
+    let gameResult = 0;
+    //create a for loop that runs 5 times
+    for (let i = 0; i < 5; i++) {
+        //run the singleRound function and store the returned result in gameResult
+        gameResult = singleRound(userSelection, computerPlay);
+        //create a switch statement that
+        switch (gameResult) {
+            //case (gameresult === 0): print you loose
+            case 0:
+                console.log('You loose!');
+                break;
+            //case (gameresult === 1): print you win
+            case 1:
+                console.log('You win!');
+                break;
+            //case (gameresult === 2): print its a draw
+            case 2:
+                console.log('It\'s a draw.');
+                break;
+        }
+    }
+}
 
-console.log(singleRound(userSelection(), computerPlay()));
+game();
+
+
+
+//console.log(singleRound(userSelection(), computerPlay()));
 
 
 //create IF case, if userSelection is rock
