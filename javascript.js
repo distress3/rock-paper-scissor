@@ -37,26 +37,26 @@ function userSelection () {
 function singleRound (userPlay, computerPlay) {
     //create variable called result, 0 for loss, 1 for win and 2 for draw
     let result = 0;
-    if (userPlay === 'rock') {
-        if (computerPlay === 'rock') {
+    if (userPlay == 'rock') {
+        if (computerPlay == 'rock') {
             result =  2;
-        } else if (computerPlay === 'paper') {
+        } else if (computerPlay == 'paper') {
             result = 0;
         } else {
             result = 1;
         }
-    } else if (userPlay === 'paper') {
-        if (computerPlay === 'rock') {
+    } else if (userPlay == 'paper') {
+        if (computerPlay == 'rock') {
             result = 1;
-        } else if (computerPlay === 'paper') {
+        } else if (computerPlay == 'paper') {
             result = 2;
         } else {
             result = 0;
         }
-    } else if (userPlay === 'scissors') {
-        if (computerPlay === 'rock') {
+    } else if (userPlay == 'scissors') {
+        if (computerPlay == 'rock') {
             result = 0;
-        } else if (computerPlay === 'paper') {
+        } else if (computerPlay == 'paper') {
             result = 1;
         } else {
             result = 2;
@@ -72,7 +72,7 @@ function game () {
     //create a for loop that runs 5 times
     for (let i = 0; i < 5; i++) {
         //run the singleRound function and store the returned result in gameResult
-        gameResult = singleRound(userSelection, computerPlay);
+        gameResult = singleRound(userSelection(), computerPlay());
         //create a switch statement that
         switch (gameResult) {
             //case (gameresult === 0): print you loose
@@ -92,34 +92,3 @@ function game () {
 }
 
 game();
-
-
-
-//console.log(singleRound(userSelection(), computerPlay()));
-
-
-//create IF case, if userSelection is rock
-    //create IF case, if computerPlay is rock
-        //print "Its a draw."
-    //else if computerPlay is paper
-        //print "You lose!"
-    //else
-        //print "You win!"
-//else if userSelection is paper
-    //create IF case, if computerPlay is rock
-        //print "You win!"
-    //else if computerPlay is paper
-        //print "Its a draw."
-    //else
-        //print "You lose!"
-//else if userSelection is scissors
-    //create IF case, if computerPlay is rock
-        //print "You lose!"
-    //else if computerPlay is paper
-        //print "You win!"
-    //else
-        //print "Its a draw."
-
-
-//print the returned value from computerPlay
-//console.log(computerPlay());
