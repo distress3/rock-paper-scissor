@@ -19,7 +19,7 @@ function getRandNum (max, min) {
 }
 
 //create function userPlay with no parameters ???
-function userPlay () {
+function userSelection () {
     //create a variable called userInput that stores input from user
     let userInput = prompt('What is your move?');
     //create a variable called lowerCaseInput that converts userInput to lower case
@@ -35,6 +35,31 @@ function userPlay () {
 
 }
 
+//create function called singleRound with two parameters, one for the computers move and one for the users move
+
+//create IF case, if userSelection is rock
+    //create IF case, if computerPlay is rock
+        //print "Its a draw."
+    //else if computerPlay is paper
+        //print "You lose!"
+    //else
+        //print "You win!"
+//else if userSelection is paper
+    //create IF case, if computerPlay is rock
+        //print "You win!"
+    //else if computerPlay is paper
+        //print "Its a draw."
+    //else
+        //print "You lose!"
+//else if userSelection is scissors
+    //create IF case, if computerPlay is rock
+        //print "You lose!"
+    //else if computerPlay is paper
+        //print "You win!"
+    //else
+        //print "Its a draw."
+
+
 //print the returned value from computerPlay
 //console.log(computerPlay());
-console.log(userPlay())
+console.log(userSelection())
