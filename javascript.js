@@ -5,9 +5,10 @@ function computerPlay () {
     //create array "possibleMoves" with rock, paper, scissors
     let possibleMoves = ['rock', 'paper', 'scissors'];
     //create variable "randomNumber" with random number between 0 and 2
-    let randomNumber = getRandNum(2,0);
+    let randomNumber = getRandNum(3,0);
+    console.log(randomNumber);
     //create variable computerChoice with the string at position(randomNumber)
-    let computerChoice = possibleMoves[randomNumber]
+    let computerChoice = possibleMoves[randomNumber];
     //return computerChoice
     return computerChoice;
 }
