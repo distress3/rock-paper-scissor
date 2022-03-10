@@ -1,7 +1,7 @@
 //hello
 
 //create function computerPlay
-function computerPlay {
+function computerPlay () {
     //create array "possibleMoves" with rock, paper, scissors
     let possibleMoves = ['rock', 'paper', 'scissors'];
     //create variable "randomNumber" with random number between 0 and 2
@@ -19,4 +19,4 @@ function getRandNum (max, min) {
 }
 
 //print the returned value from computerPlay
-console.log(computerPlay);
+console.log(computerPlay());
