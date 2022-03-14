@@ -66,29 +66,46 @@ function singleRound (userPlay, computerPlay) {
 }
 
 //create a function named game()
-function game () {
+function game (userButton) {
     //create a variable called gameResult and set it to 0
     let gameResult = 0;
-    //create a for loop that runs 5 times
-    for (let i = 0; i < 5; i++) {
-        //run the singleRound function and store the returned result in gameResult
-        gameResult = singleRound(userSelection(), computerPlay());
-        //create a switch statement that
-        switch (gameResult) {
-            //case (gameresult === 0): print you loose
-            case 0:
-                console.log('You loose!');
-                break;
-            //case (gameresult === 1): print you win
-            case 1:
-                console.log('You win!');
-                break;
-            //case (gameresult === 2): print its a draw
-            case 2:
-                console.log('It\'s a draw.');
-                break;
-        }
+    //run the singleRound function and store the returned result in gameResult
+    gameResult = singleRound(userButton, computerPlay());
+    //create a switch statement that
+    switch (gameResult) {
+        //case (gameresult === 0): print you loose
+        case 0:
+            console.log('You loose!');
+            resultsSection.innerText = 'You loose!'
+            break;
+        //case (gameresult === 1): print you win
+        case 1:
+            console.log('You win!');
+            resultsSection.innerText = 'You win!'
+            break;
+        //case (gameresult === 2): print its a draw
+        case 2:
+            console.log('It\'s a draw.');
+            resultsSection.innerText = 'It\'s a draw.'
+            break;
     }
 }
 
-game();
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorsButton = document.querySelector('#scissors');
+const resultsSection = document.querySelector('.result');
+
+
+rockButton.addEventListener("click", function(e) {
+    game('rock');
+});
+
+paperButton.addEventListener("click", function(e) {
+    game('paper');
+});
+
+scissorsButton.addEventListener("click", function(e) {
+    game('scissors');
+});
+
