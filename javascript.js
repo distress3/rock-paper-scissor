@@ -75,19 +75,40 @@ function game (userButton) {
     switch (gameResult) {
         //case (gameresult === 0): print you loose
         case 0:
-            console.log('You loose!');
-            resultsSection.innerText = 'You loose!'
+            winComputer();
             break;
         //case (gameresult === 1): print you win
         case 1:
-            console.log('You win!');
-            resultsSection.innerText = 'You win!'
+            winUser();
             break;
         //case (gameresult === 2): print its a draw
         case 2:
-            console.log('It\'s a draw.');
             resultsSection.innerText = 'It\'s a draw.'
             break;
+    }
+}
+
+function winUser() {
+    resultsSection.innerText = 'You win the round!'
+    userScore++
+    scoreSection.innerText = 'Current human score: ' + userScore;
+    if (userScore >= 5) {
+        matchResult.innerText = 'Match won by: You!';
+        rockButton.style.display = 'none';
+        paperButton.style.display = 'none';
+        scissorsButton.style.display = 'none';
+    }
+}
+
+function winComputer() {
+    resultsSection.innerText = 'You loose this round!'
+    computerScore++
+    computerScoreSection.innerText = 'Current computer score: ' + computerScore;
+    if (computerScore >= 5) {
+        matchResult.innerText = 'Match won by: Computer!';
+        rockButton.style.display = 'none';
+        paperButton.style.display = 'none';
+        scissorsButton.style.display = 'none';
     }
 }
 
@@ -95,7 +116,12 @@ const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
 const resultsSection = document.querySelector('.result');
-
+const scoreSection = document.querySelector('.score');
+const computerScoreSection = document.querySelector('.computer-score');
+const matchResult = document.querySelector('.match-result');
+let gameScore = 0;
+let userScore = 0;
+let computerScore = 0;
 
 rockButton.addEventListener("click", function(e) {
     game('rock');
@@ -108,4 +134,7 @@ paperButton.addEventListener("click", function(e) {
 scissorsButton.addEventListener("click", function(e) {
     game('scissors');
 });
+
+//scoreSection.innerText = 'Current score: ' + gameScore;
+
 
